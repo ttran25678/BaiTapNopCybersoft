@@ -17,7 +17,7 @@ public class UserRepository {
 		int rs = -1;
 		try {
 			Connection connection = MySqlConnection.getConnection();
-			String query = "SELECT email, password FROM logindb WHERE email = ? AND password = ?";
+			String query = "SELECT email, password FROM user WHERE email = ? and password = ?";
 			PreparedStatement statement = connection.prepareStatement(query);
 			statement.setNString(1, email);
 			statement.setNString(2, password);
